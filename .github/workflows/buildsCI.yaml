@@ -12,7 +12,17 @@ env:
   LRS_RUN_CONFIG: Release
   PYTHON_PATH: C:\\hostedtoolcache\\windows\\Python\\3.8.1\\x64\\python.exe
   
-jobs:    
+jobs:
+  CPPLint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+    - run: pip install cpplint
+    - run: cpplint --recursive .
+  
+  
   Windows_testing_cpp_USB_Win7:
     runs-on: windows-2016
     timeout-minutes: 60
