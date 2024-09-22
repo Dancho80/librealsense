@@ -21,7 +21,7 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       
-      - name: Prebuild
+      - name: Prebuild1
         shell: bash
         run: |
           cd scripts && ./api_check.sh && cd ..
